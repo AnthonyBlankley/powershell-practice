@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS
-    Displays all running processes.
+    Displays running processes.
 
 .DESCRIPTION
-    Simple, non-admin script for checking high-CPU processes.
+    Simple script to show top CPU‑using processes.
 #>
 
 Get-Process |
     Sort-Object CPU -Descending |
-    Select-Object Name, CPU, Id
+    Select-Object Name, CPU -First 5
